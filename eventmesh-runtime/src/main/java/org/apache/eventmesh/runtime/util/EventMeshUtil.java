@@ -139,9 +139,10 @@ public class EventMeshUtil {
             keys = properties.get(EventMeshConstants.KEYS_LOWERCASE);
         }
 
-        String result = String.format("Message [topic=%s,TTL=%s,uniqueId=%s,bizSeq=%s]", eventMeshMessage.getTopic(),
-            properties.get(EventMeshConstants.TTL), properties.get(EventMeshConstants.RR_REQUEST_UNIQ_ID), keys);
-        return result;
+        // String result = String.format("Message [topic=%s,TTL=%s,uniqueId=%s,bizSeq=%s]", eventMeshMessage.getTopic(),
+        // properties.get(EventMeshConstants.TTL), properties.get(EventMeshConstants.RR_REQUEST_UNIQ_ID), keys);
+        return String.format("Message [topic=%s,TTL=%s,uniqueId=%s,bizSeq=%s]", eventMeshMessage.getTopic(),properties.get(EventMeshConstants.TTL),
+               properties.get(EventMeshConstants.RR_REQUEST_UNIQ_ID), keys);
     }
 
     public static String getMessageBizSeq(CloudEvent event) {
